@@ -1,7 +1,6 @@
 import React from 'react';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
-
 import './components/Todo.css';
 
 
@@ -13,32 +12,32 @@ class App extends React.Component {
       todoTask: "", 
       todo : [
         {
-          task: 'Bananas',
+          task: 'GC 1-6',
           id: 123,
           complete: false
         },
         {
-          task: 'Torillas',
+          task: 'Back to School promotion',
           id: 124,
           complete: false
         },
         {
-          task: 'Milk',
+          task: 'mock-ups for retailer options',
           id: 1235,
           complete: false
         },
         {
-          task: 'Pizza Sauce',
+          task: 'Promotional dashboard',
           id: 1246,
           complete: false
         },
         {
-          task: 'Raw Honey',
+          task: 'Labor Day edits',
           id: 1237,
           complete: false
         },
         {
-          task: 'Granola',
+          task: 'Bitbucket transfer',
           id: 1248,
           complete: false
         }
@@ -109,7 +108,7 @@ changeHandler = event =>{
 
       <div className="App">
         <h1>Welcome to your Todo App</h1>
-        <p className="header">Let's get Started!</p>
+        <p className="header">FINISH IT!</p>
         <div className="todo-list">
         <TodoForm submitTodo={this.submitTodo} task={this.state.todoTask} changeHandler={this.changeHandler}/>
         <TodoList todo={this.state.todo}  toggleTodo={this.toggleTodo}  clearComplete={this.clearComplete}/>
