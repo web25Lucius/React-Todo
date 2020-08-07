@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './Todo.css';
 
 const TodoForm = props => {
     
@@ -7,14 +7,16 @@ const TodoForm = props => {
    return (
        <div>
           <form onSubmit={props.submitTodo}>
-          <button>Add</button> 
           <input
+            className="textArea"
+            placeholder="You will add tasks here!"
             type="text"
             value={props.task}
             name="todo"
             id="todo"
             onChange={props.changeHandler}
           />
+          <button>Add task</button> 
       </form>
      
        </div>   

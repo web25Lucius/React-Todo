@@ -8,7 +8,7 @@ body {
 }
 
 body {
-  background-color: #525269;
+  background-color: #5f3904;
 }
 
 h1,
@@ -20,16 +20,17 @@ h6,
 div,
 p,
 span {
-  color: rgba(215, 219, 200, 0.646);
+  color: #d7dbc8a5;
   font-family: 'Roboto', sans-serif;
 }
 
 .App {
   font-family: sans-serif;
-  text-align: center;
+  text-align: start;
   padding: 0 36px;
   max-width: 665px;
   margin: 0 auto;
+  font:#adb5aa;
 }
 
 .header {
@@ -57,9 +58,25 @@ h1 {
   cursor: pointer;
 }
 
+.textArea {
+  background-color: #1e2f3edb;
+  color: #adb5aa;
+  width: 252px;
+  height: auto;
+  text-align: left;
+  margin: 16px 0px 0px 0px;
+  padding: 8px;
+  cursor: pointer;
+}
+
 .complete {
-  background-color: #d1caca;
-  text-decoration: line-through;
+  color: #5f0805;
+  text-decoration-line: line-through;
+  width: 45%;
+  text-align: left;
+  margin: 4px 0;
+  padding-left: 8px;
+  cursor: pointer;
 }
 
 form {
@@ -67,6 +84,7 @@ form {
   display: flex;
   justify-content: flex-end;
 }
+
 form > input {
   background-color: #525269;
   border: 0;
@@ -81,17 +99,22 @@ form > input {
 
 button {
   background-color: #5f0805;
-  border: 1px solid #5f0805;
+  /* border: 1px solid #5f0805; */
   color: white;
+  height: auto;
   font-size: 16px;
-  padding: 6px 14px;
+  padding: 8px;
+  margin: 16px 0px 0px 0px;
+  border-radius: 0px 5px 5px 0px;
 }
 
 input::placeholder {
-  color: #5f0805;
+  color: #adb5aa;
   opacity: 1;
 }
 
 .clear-btn {
   margin-top: 16px;
+  border-radius: 5px;
 }
+
