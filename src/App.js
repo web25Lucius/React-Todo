@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+
 import './components/Todo.css';
 
 
@@ -107,8 +108,18 @@ changeHandler = event =>{
     return (
 
       <div className="App">
-        <h1>Welcome to your Todo App</h1>
-        <p className="header">FINISH IT!</p>
+        <h1>Resistance is futile</h1>
+        <h3>You will comply</h3>
+        <p className="header">
+          
+          <ul> 
+            <li>Add the tasks you have not yet completed below.</li> 
+            <li>Complete them.</li>  
+            <li>When a task has been executed, select it with your mouse.</li> 
+            <li>clear it from the list by clicking the clear complete button.</li> 
+          </ul> 
+        </p>  
+        <h4>If successful, your task will no longer be present on your list. <br/>You will repeat this until your tasks have been accomplished.<br /> You may begin.</h4>
         <div className="todo-list">
         <TodoForm submitTodo={this.submitTodo} task={this.state.todoTask} changeHandler={this.changeHandler}/>
         <TodoList todo={this.state.todo}  toggleTodo={this.toggleTodo}  clearComplete={this.clearComplete}/>

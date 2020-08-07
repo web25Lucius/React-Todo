@@ -9,14 +9,14 @@ const TodoForm = props => {
           <form onSubmit={props.submitTodo}>
           <input
             className="textArea"
-            placeholder="you will add tasks here! &nbsp;"
+            placeholder="You will add tasks here!"
             type="text"
             value={props.task}
             name="todo"
             id="todo"
             onChange={props.changeHandler}
           />
-          <button>SUBMIT</button> 
+          <button>Add task</button> 
       </form>
      
        </div>   
