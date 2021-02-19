@@ -7,10 +7,10 @@ class App extends React.Component {
   constructor(props){
    super(props);
    this.state = {
-     todo: '',
+     formInput: '',
      todoList: [{
-                  // id: 0, 
-                  formInput: ''
+                  todo: '', 
+                  done: false
                 }]
     };
   } //end of constructor 
@@ -21,18 +21,22 @@ class App extends React.Component {
   //handlers for form 
   updateFormInput = (event) => {
     this.setState({formInput: event.target.value})
-    console.log("this is updateFormInput", event.target.value)
- //    return this.updateFormInput
+    // console.log("this is event.target.value", event.target.value)
+    console.log("this is returned from updateFormInput", this.state.formInput)
 };
 
 
 
 updateFormSubmit = (event) => {
  event.preventDefault()
- this.setState({formInput: this.state.formInput})
- this.setState({todo: this.state.formInput})
+ const newTodo = {
+  ...this.state, 
+  todoList: [...this.state.todoList, {todo: this.state.formInput, done: false}]
+}
+ this.setState(newTodo);
+//  this.setState({todo: this.state.formInput})
+ this.setState({formInput: ''})
  console.log("this is updateFormSubmit returning state of formInput:", this.state.formInput)
-//    return this.updateFormSubmit
 };
   
 
@@ -56,11 +60,9 @@ updateFormSubmit = (event) => {
                 <button type="submit">Submit</button>
                 <button>Remove</button>
             </form>
-      <TodoList todoList={this.state.todoList} todo={this.state.todo} >
-        {/* <Todo task={this.state.todo}/> */}
-      </TodoList>
-      
-
+      <TodoList todoList={this.state.todoList} />
+     
+    
     </div>
   )
   }
