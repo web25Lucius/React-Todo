@@ -8,7 +8,7 @@ class TodoList extends React.Component{
         console.log("List props:",this.props)
         return(
             <div>
-            <p>chking in</p>
+            <p>Todo List Component</p>
             <ul>
             {this.props.todoList.map(todoItem => 
             <Todo 
