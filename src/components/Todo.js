@@ -4,8 +4,9 @@ import React from 'react';
 class Todo extends React.Component{
    
     render(){
+        console.log(this.props.task)
         return(
-             <li> Ready to : {this.props.task} </li> 
+             <li> {this.props.task} </li> 
         )
     }
 }

@@ -1,60 +1,60 @@
-import React from 'react';
+// import React from 'react';
 
-class TodoForm extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-         formInput: ''
-         };
+// class TodoForm extends React.Component{
+//     constructor(props){
+//         super(props);
+//         this.state = {
+//          formInput: ''
+//          };
 
-       } //end of constructor 
+//        } //end of constructor 
 
-   updateFormInput = (event) => {
-       this.setState({formInput: event.target.value})
-       console.log("this is updateFormInput", event.target.value)
-    //    return this.updateFormInput
-   };
-
-
-
-   updateFormSubmit = (event) => {
-    event.preventDefault()
-    this.setState({formSubmit: this.state.formInput})
-    console.log("this is updateFormSubmit", this.state.formInput)
- //    return this.updateFormSubmit
-};
-
-
-
-
-//    updateFormSubmit = async (event) => {
-//        event.preventDefault()
-//        await this.setState({formSubmit: this.state.formInput})
-//        console.log("this is updateFormSubmit", this.state.formSubmit)
-//     //    return this.updateFormSubmit
+//    updateFormInput = (event) => {
+//        this.setState({formInput: event.target.value})
+//        console.log("this is updateFormInput", event.target.value)
+//     //    return this.updateFormInput
 //    };
 
 
-    render(){
-        return(
-            // <form onSubmit={e => this.updateFormSubmit(e)}>
-            <form onSubmit={this.updateFormSubmit}>
-                <label><span role="img" aria-label="open eyes looking emoji">👀</span></label>
-                    <input
-                    type="text"
-                    placeholder="the whole truth"
-                    name="list"
-                    value={this.state.formInput}
-                    // onChange={e => this.updateFormInput(e)}
-                    onChange={this.updateFormInput}
-                    />
+
+//    updateFormSubmit = (event) => {
+//     event.preventDefault()
+//     this.setState({formSubmit: this.state.formInput})
+//     console.log("this is updateFormSubmit", this.state.formInput)
+//  //    return this.updateFormSubmit
+// };
+
+
+
+
+// //    updateFormSubmit = async (event) => {
+// //        event.preventDefault()
+// //        await this.setState({formSubmit: this.state.formInput})
+// //        console.log("this is updateFormSubmit", this.state.formSubmit)
+// //     //    return this.updateFormSubmit
+// //    };
+
+
+//     render(){
+//         return(
+//             // <form onSubmit={e => this.updateFormSubmit(e)}>
+//             <form onSubmit={this.updateFormSubmit}>
+//                 <label><span role="img" aria-label="open eyes looking emoji">👀</span></label>
+//                     <input
+//                     type="text"
+//                     placeholder="the whole truth"
+//                     name="list"
+//                     value={this.state.formInput}
+//                     // onChange={e => this.updateFormInput(e)}
+//                     onChange={this.updateFormInput}
+//                     />
                 
-                <button type="submit">Submit</button>
-                <button>Remove</button>
-            </form>
-        )
-    }
-} export default TodoForm;
+//                 <button type="submit">Submit</button>
+//                 <button>Remove</button>
+//             </form>
+//         )
+//     }
+// } export default TodoForm;
 
 
 

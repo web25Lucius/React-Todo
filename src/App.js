@@ -1,21 +1,39 @@
 
 import React from 'react';
-import TodoForm from './components/TodoForm';
+// lifted to app import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
-
+// import Todo from './components/Todo';
 class App extends React.Component {
   constructor(props){
    super(props);
    this.state = {
      todo: '',
      todoList: [{
-                  id: 0, 
-                  todoTask: ''
+                  // id: 0, 
+                  formInput: ''
                 }]
     };
   } //end of constructor 
 
-  //condition handler for TodoForm info to populate todoTask state above 
+
+
+  //lifting form state to app
+  //handlers for form 
+  updateFormInput = (event) => {
+    this.setState({formInput: event.target.value})
+    console.log("this is updateFormInput", event.target.value)
+ //    return this.updateFormInput
+};
+
+
+
+updateFormSubmit = (event) => {
+ event.preventDefault()
+ this.setState({formInput: this.state.formInput})
+ this.setState({todo: this.state.formInput})
+ console.log("this is updateFormSubmit returning state of formInput:", this.state.formInput)
+//    return this.updateFormSubmit
+};
   
 
   render(){
@@ -23,8 +41,25 @@ class App extends React.Component {
   return(
     <div>
       <h1>Tick Tock- you got *%@# to do!</h1>
-      <TodoForm />
-      <TodoList todoList={}/>
+      {/* // <form onSubmit={e => this.updateFormSubmit(e)}> */}
+            <form onSubmit={this.updateFormSubmit}>
+                <label><span role="img" aria-label="open eyes looking emoji">👀</span></label>
+                    <input
+                    type="text"
+                    placeholder="the whole truth"
+                    name="list"
+                    value={this.state.formInput}
+                    // onChange={e => this.updateFormInput(e)}
+                    onChange={this.updateFormInput}
+                    />
+                
+                <button type="submit">Submit</button>
+                <button>Remove</button>
+            </form>
+      <TodoList todoList={this.state.todoList} todo={this.state.todo} >
+        {/* <Todo task={this.state.todo}/> */}
+      </TodoList>
+      
 
     </div>
   )
